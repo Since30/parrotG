@@ -71,7 +71,7 @@ Consultez notre [documentation de déploiement Next.js](https://nextjs.org/docs/
 L'API est déployée sur Render : [https://garage-3c4p.onrender.com/](https://garage-3c4p.onrender.com/)
 
 Vous pouvez tester cette API avec Postman en envoyant des modèles JSON, ou directement sur les pages de tableau de bord du client en utilisant :
-- EMAIL : admin@localhost
+- EMAIL : admin@localhost.com
 - MOT DE PASSE : j684W7qhMN5uuM
 
 

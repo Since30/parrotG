@@ -13,12 +13,24 @@ interface Review {
 
 const Avis: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
-  const [name, setName] = useState('');
-  const [comment, setComment] = useState('');
-  const [rating, setRating] = useState<number>(0); // Initialisation de la propriété rating
+  const [name, setName] = useState<string>('');
+  const [comment, setComment] = useState<string>('');
+  const [rating, setRating] = useState<number>(0);
 
   useEffect(() => {
-    // Récupérer les avis depuis l'API/backend et les mettre à jour dans state (reviews)
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('https://garage-3c4p.onrender.com/api/avis');
+        if (response.ok) {
+          const data = await response.json();
+          setReviews(data);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la récupération des avis', error);
+      }
+    };
+
+    fetchReviews(); 
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,31 +50,16 @@ const Avis: React.FC = () => {
       });
       
       if (response.ok) {
-        // Le serveur a accepté l'avis, vous pouvez mettre à jour l'état de votre formulaire ou effectuer d'autres actions.
+        
         setName('');
         setComment('');
-        // Mettre à jour la liste des avis sur la page d'accueil (étape 3).
-        // ...
+        setRating(0);
       } else {
-        // Gérez les erreurs en cas d'échec de la requête.
         console.error('Erreur lors de l\'envoi de l\'avis.');
       }
     } catch (error) {
       console.error('Une erreur s\'est produite.', error);
     }
-    // Envoyer le nouvel avis à l'API/backend pour enregistrement
-    // Mettre à jour la liste des avis (reviews) avec le nouvel avis
-    const newReview: Review = {
-      id: reviews.length + 1,
-      name,
-      comment,
-      createdAt: new Date().toLocaleDateString(),
-      rating, 
-    };
-    setReviews([...reviews, newReview]);
-    setName('');
-    setComment('');
-    setRating(0); 
   };
 
   return (
@@ -70,13 +67,12 @@ const Avis: React.FC = () => {
       <Navbar />
       <div className="container mx-auto p-6">
         <h1 className="text-xl font-semibold mb-5 text-center">Avis des clients</h1>
-        {/* Afficher la liste des avis */}
         {reviews.map((review) => (
           <div key={review.id} className="mb-4">
             <p className="font-semibold">{review.name}</p>
             <p>{review.comment}</p>
             <p className="text-gray-500">{review.createdAt}</p>
-            <p className="text-gray-500">Note : {review.rating}/5</p> {/* Afficher la notation */}
+            <p className="text-gray-500">Note : {review.rating}/5</p>
           </div>
         ))}
         <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
