@@ -7,8 +7,8 @@ interface Review {
   id: number;
   name: string;
   comment: string;
-  createdAt: string;
   rating: number; 
+  createdAt: string;
 }
 
 const Avis: React.FC = () => {

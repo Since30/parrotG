@@ -3,6 +3,7 @@ import '../app/globals.css'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import VehicleSearchForm from '@/components/VehiculesSearchForm';
+import Link from 'next/link';
 
 interface VehicleProps {
   id: number;
@@ -126,6 +127,7 @@ const VehicleList: React.FC = () => {
       <VehicleSearchForm />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 mb-12">
         {vehicles.map((vehicle) => (
+           <Link key={vehicle.id} href={`/vehicles/${vehicle.id}`}>
           <div key={vehicle.id} className="bg-white shadow-md rounded-lg overflow-hidden">
             <img
               src={vehicle.image}
@@ -152,11 +154,14 @@ const VehicleList: React.FC = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
       <Footer />
     </>
     );
   };
+
+
   
   export default VehicleList;
