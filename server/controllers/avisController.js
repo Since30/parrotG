@@ -7,20 +7,20 @@ const Review = require("../model/avisModel");
 
 const createReview = (req, res) => {
   //const newReview = new Review(req.body);
-  const { userId, comment, createdAt, rating } = req.body;
-  const newReview = new Review(userId, comment, rating, createdAt);
+  const { name, comment, rating, createdAt } = req.body;
+  const newReview = new Review(name, comment, rating, createdAt);
 
   console.log(newReview);
   newReview.save();
 
   db.serialize(() => {
     db.run(
-      "INSERT INTO avis (name, comment, createdAt, rating) VALUES (?, ?, ?, ?)",
+      "INSERT INTO avis (name, comment, rating, createdAt ) VALUES (?, ?, ?, ?)",
       [
         newReview.name,
         newReview.comment,
-        newReview.createdAt,
         newReview.rating,
+        newReview.createdAt,
       ],
       (err) => {
         if (err) {
