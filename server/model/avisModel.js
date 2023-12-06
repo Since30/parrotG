@@ -16,8 +16,8 @@ class Review {
       CREATE TABLE IF NOT EXISTS avis (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
+        comment TEXT NOT NULL,
         rating INTEGER NOT NULL CHECK (rating >= 1 AND rating <= 5),
-        comment TEXT,
         createdAt TEXT NOT NULL
       )
       `);
