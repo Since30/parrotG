@@ -1,61 +1,78 @@
-This is a Next.js project bootstrapped with create-next-app.
+# ParrotG - Projet Next.js
 
-Getting Started
-First, run the development server:
+Ce projet Next.js a été initialisé avec `create-next-app`.
 
-git clone https://github.com/Since30/parrotG.git
+## Démarrage Rapide
 
-npm install for dependancies
+### Installation et Lancement du Serveur de Développement
 
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-Open http://localhost:3000 with your browser to see the result.
+1. Clonez le dépôt :
 
-You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
-This project uses next/font to automatically optimize and load Inter, a custom Google Font.
+2. Allez dans le dossier du projet :
 
-Learn More
-To learn more about Next.js, take a look at the following resources:
 
-Next.js Documentation - learn about Next.js features and API.
-Learn Next.js - an interactive Next.js tutorial.
-You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
+3. Installez les dépendances :
 
-Deploy on Vercel
-https://garage-client-six.vercel.app/
 
-Check out our Next.js deployment documentation for more details.
+Vous pouvez également utiliser `yarn`, `pnpm`, ou `bun`.
 
-Getting started for Server
+4. Lancez le serveur de développement :
 
-first 
+Ou utilisez `yarn dev`, `pnpm dev`, ou `bun dev` selon votre gestionnaire de paquets.
 
--npm install for dependancies
+5. Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
-Run local :
+### Modification des Pages
 
--nodemon start(for maj server without restart it!)
+- Commencez à éditer la page en modifiant `app/page.tsx`. La page se met à jour automatiquement lorsque vous modifiez le fichier.
+- Ce projet utilise `next/font` pour optimiser et charger automatiquement Inter, une police personnalisée de Google Fonts.
 
--npm start
+## En Savoir Plus sur Next.js
 
-Open http://localhost:3001 with your browser to see the result.
+Pour en savoir plus sur Next.js, consultez les ressources suivantes :
+- [Documentation Next.js](https://nextjs.org/docs) - Apprenez les fonctionnalités et l'API de Next.js.
+- [Tutoriel Next.js](https://nextjs.org/learn) - Un tutoriel interactif sur Next.js.
+- [Dépôt GitHub de Next.js](https://github.com/vercel/next.js/) - Vos retours et contributions sont les bienvenus !
 
--get vehicles with /api/vehicles
--get reviews with /api/avis
+## Déploiement sur Vercel
 
-the api is deploy on render:
-https://garage-3c4p.onrender.com/
+Visitez [https://garage-client-six.vercel.app/](https://garage-client-six.vercel.app/)
 
-you can test this API with postman send in models JSON
-or directly on the dashboard pages in client:
+Consultez notre [documentation de déploiement Next.js](https://nextjs.org/docs/deployment) pour plus de détails.
 
--EMAIL=admin@localhost
+## Démarrage du Serveur
 
--PASSWORD=j684W7qhMN5uuM
+### Installation et Lancement du Serveur Local
+
+1. Allez dans le dossier du serveur :
+
+
+2. Installez les dépendances :
+
+
+3. Lancez le serveur local :
+- Avec nodemon (pour une mise à jour du serveur sans redémarrage) :
+  ```
+  nodemon start
+  ```
+- Ou simplement avec npm :
+  ```
+  npm start
+  ```
+
+4. Ouvrez [http://localhost:3001](http://localhost:3001) dans votre navigateur pour voir le résultat.
+
+### Utilisation de l'API
+
+- Accédez aux véhicules via `/api/vehicles`
+- Accédez aux avis via `/api/avis`
+
+L'API est déployée sur Render : [https://garage-3c4p.onrender.com/](https://garage-3c4p.onrender.com/)
+
+Vous pouvez tester cette API avec Postman en envoyant des modèles JSON, ou directement sur les pages de tableau de bord du client en utilisant :
+- EMAIL : admin@localhost
+- MOT DE PASSE : j684W7qhMN5uuM
+
+
 
